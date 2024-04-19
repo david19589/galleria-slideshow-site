@@ -7,15 +7,17 @@ function Home(props: { slideshowText: boolean; handleClick: () => void }) {
     <Container>
       {Data.map((item, index) => {
         return (
-          <Link to={`/Art/${item.name.toLowerCase()} `} key={index}>
-            <InnerContainer onClick={props.handleClick}>
-              <ArtImg src={item.images.thumbnail} alt={item.name} />
-              <ArtWorkInfo>
-                <Title>{item.name}</Title>
-                <Author>{item.artist.name}</Author>
-              </ArtWorkInfo>
-            </InnerContainer>
-          </Link>
+          <SecondContainer key={index}>
+            <StyledLink to={`/Art/${item.name.toLowerCase()} `}>
+              <InnerContainer onClick={props.handleClick}>
+                <ArtImg src={item.images.thumbnail} alt={item.name} />
+                <ArtWorkInfo>
+                  <Title>{item.name}</Title>
+                  <Author>{item.artist.name}</Author>
+                </ArtWorkInfo>
+              </InnerContainer>
+            </StyledLink>
+          </SecondContainer>
         );
       })}
     </Container>
@@ -26,25 +28,52 @@ export default Home;
 
 const Container = styled.div`
   padding: 24px;
+  @media (min-width: 768px) {
+    -webkit-columns: 2;
+    column-count: 2;
+    padding: 40px;
+    gap: 30px;
+  }
+  @media (min-width: 1440px) {
+    -webkit-columns: 4;
+    column-count: 4;
+    padding: 40px;
+    gap: 30px;
+  }
 `;
 
-const InnerContainer = styled.div`
-  position: relative;
-  :hover {
-    opacity: 70%;
+const SecondContainer = styled.div`
+  margin-bottom: 24px;
+  @media (min-width: 768px) {
+    height: fit-content;
+    margin-bottom: 30px;
   }
-  cursor: pointer;
+`;
+
+const StyledLink = styled(Link)`
+  height: fit-content;
 `;
 
 const ArtImg = styled.img`
   width: 100%;
-  margin-bottom: 24px;
+`;
+
+const InnerContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    ${ArtImg} {
+      opacity: 0.8;
+    }
+  }
+  @media (min-width: 768px) {
+  }
 `;
 
 const ArtWorkInfo = styled.div`
   width: -webkit-fill-available;
   position: absolute;
-  bottom: 28px;
+  bottom: 2px;
   padding: 32px;
   background: linear-gradient(
     180deg,

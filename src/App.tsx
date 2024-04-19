@@ -1,14 +1,21 @@
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Components/Header";
 import ImgRoutes from "./Components/ImgRoutes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [slideshowText, setSlideshowText] = useState(false);
-  const handleClick = () => {
-    setSlideshowText((prevState) => !prevState);
-  };
+  const [slideshowText, setSlideshowText] = useState(() => {
+    const storedState = localStorage.getItem("slideshowText");
+    return storedState ? JSON.parse(storedState) : false;
+  });
 
+  useEffect(() => {
+    localStorage.setItem("slideshowText", JSON.stringify(slideshowText));
+  }, [slideshowText]);
+  const handleClick = () => {
+    setSlideshowText((prevState: boolean) => !prevState);
+  };
+ 
   return (
     <BrowserRouter>
       <Header
@@ -16,7 +23,11 @@ function App() {
         setSlideshowText={setSlideshowText}
         handleClick={handleClick}
       />
-      <ImgRoutes slideshowText={slideshowText} handleClick={handleClick} />
+      <ImgRoutes
+        slideshowText={slideshowText}
+        handleClick={handleClick}
+      />
+      
     </BrowserRouter>
   );
 }

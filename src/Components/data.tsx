@@ -109,6 +109,25 @@ const Data = [
     },
   },
   {
+    name: "Mona Lisa",
+    year: 1503,
+    description:
+      "The Mona Lisa (/ˌmoʊnə ˈliːsə/; italian: La Gioconda [la dʒoˈkonda] or Monna Lisa [ˈmɔnna ˈliːza]) is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\". The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
+    source: "https://en.wikipedia.org/wiki/Mona_Lisa",
+    artist: {
+      image: monaLisaArtist,
+      name: "Leonardo da Vinci",
+    },
+    images: {
+      thumbnail: monaLisaThumbnail,
+      hero: {
+        small: monaLisaHeroSmall,
+        large: monaLisaHeroLarge,
+      },
+      gallery: monaLisaGallery,
+    },
+  },
+  {
     name: "Girl with a Pearl Earring",
     year: 1665,
     description:
@@ -128,22 +147,41 @@ const Data = [
     },
   },
   {
-    name: "Guernica",
-    year: 1937,
+    name: "Van Gogh Self-portrait",
+    year: 1889,
     description:
-      "The scene occurs within a room where, on the left, a wide-eyed bull stands over a grieving woman holding a dead child in her arms. In the center of the room a horse falls in agony with a large gaping hole in its side, as if it had just been run through by a spear or javelin. The horse appears to be wearing chain mail armor, decorated with vertical tally marks arranged in rows. A dead and dismembered soldier lies under the horse. The hand of his severed right arm grasps a shattered sword, from which a flower grows.",
-    source: "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+      'This self-portrait was one of about 32 produced over a 10-year period, and these were an important part of his work as a painter; he painted himself because he often lacked the money to pay for models. He took the painting with him to Auvers-sur-Oise, near Paris, where he showed it to Dr. Paul Gachet, who thought it was "absolutely fanatical". Art historians are divided as to whether this painting or Self-portrait without beard is Van Gogh\'s final self-portrait. The art historians Ingo F. Walther and Jan Hulsker consider this to be the last.',
+    source: "https://en.wikipedia.org/wiki/Van_Gogh_self-portrait_(1889)",
     artist: {
-      image: guernicaArtist,
-      name: "Pablo Picasso",
+      image: vanGoghSelfPortraitArtist,
+      name: "Vincent Van Gogh",
     },
     images: {
-      thumbnail: guernicaThumbnail,
+      thumbnail: vanGoghSelfPortraitThumbnail,
       hero: {
-        small: guernicaHeroSmall,
-        large: guernicaHeroLarge,
+        small: vanGoghSelfPortraitHeroSmall,
+        large: vanGoghSelfPortraitHeroLarge,
       },
-      gallery: guernicaGallery,
+      gallery: vanGoghSelfPortraitGallery,
+    },
+  },
+  {
+    name: "The Great Wave off Kanagawa",
+    year: 1831,
+    description:
+      'The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. "Under the Wave off Kanagawa"), also known as The Great Wave or simply The Wave, is a woodblock print by the Japanese ukiyo-e artist Hokusai. It was published sometime between 1829 and 1833 in the late Edo period as the first print in Hokusai\'s series Thirty-six Views of Mount Fuji. The image depicts an enormous wave threatening three boats off the coast in the Sagami Bay (Kanagawa Prefecture) while Mount Fuji rises in the background.',
+    source: "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
+    artist: {
+      image: greatWaveOffKanagawaArtist,
+      name: "Hokusai",
+    },
+    images: {
+      thumbnail: greatWaveOffKanagawaThumbnail,
+      hero: {
+        small: greatWaveOffKanagawaHeroSmall,
+        large: greatWaveOffKanagawaHeroLarge,
+      },
+      gallery: greatWaveOffKanagawaGallery,
     },
   },
   {
@@ -186,79 +224,22 @@ const Data = [
     },
   },
   {
-    name: "The Great Wave off Kanagawa",
-    year: 1831,
-    description:
-      'The Great Wave off Kanagawa (Japanese: 神奈川沖浪裏, Hepburn: Kanagawa-oki Nami Ura, lit. "Under the Wave off Kanagawa"), also known as The Great Wave or simply The Wave, is a woodblock print by the Japanese ukiyo-e artist Hokusai. It was published sometime between 1829 and 1833 in the late Edo period as the first print in Hokusai\'s series Thirty-six Views of Mount Fuji. The image depicts an enormous wave threatening three boats off the coast in the Sagami Bay (Kanagawa Prefecture) while Mount Fuji rises in the background.',
-    source: "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
-    artist: {
-      image: greatWaveOffKanagawaArtist,
-      name: "Hokusai",
-    },
-    images: {
-      thumbnail: greatWaveOffKanagawaThumbnail,
-      hero: {
-        small: greatWaveOffKanagawaHeroSmall,
-        large: greatWaveOffKanagawaHeroLarge,
-      },
-      gallery: greatWaveOffKanagawaGallery,
-    },
-  },
-  {
-    name: "Van Gogh Self-portrait",
+    name: "The Boy in the Red Vest",
     year: 1889,
     description:
-      'This self-portrait was one of about 32 produced over a 10-year period, and these were an important part of his work as a painter; he painted himself because he often lacked the money to pay for models. He took the painting with him to Auvers-sur-Oise, near Paris, where he showed it to Dr. Paul Gachet, who thought it was "absolutely fanatical". Art historians are divided as to whether this painting or Self-portrait without beard is Van Gogh\'s final self-portrait. The art historians Ingo F. Walther and Jan Hulsker consider this to be the last.',
-    source: "https://en.wikipedia.org/wiki/Van_Gogh_self-portrait_(1889)",
+      "Cézanne painted four oil portraits of this Italian boy in the red vest, all in different poses, which allowed him to study the relationship between the figure and space. The most famous of the four, and the one commonly referred to by this title, is the one which depicts the boy in a melancholic seated pose with his elbow on a table and his head cradled in his hand. It is currently held in Zürich, Switzerland. The other three portraits, of different poses, are in museums in the US",
+    source: "https://en.wikipedia.org/wiki/The_Boy_in_the_Red_Vest",
     artist: {
-      image: vanGoghSelfPortraitArtist,
-      name: "Vincent Van Gogh",
+      image: boyInRedVestArtist,
+      name: "Paul Cézanne",
     },
     images: {
-      thumbnail: vanGoghSelfPortraitThumbnail,
+      thumbnail: boyInRedVestThumbnail,
       hero: {
-        small: vanGoghSelfPortraitHeroSmall,
-        large: vanGoghSelfPortraitHeroLarge,
+        small: boyInRedVestHeroSmall,
+        large: boyInRedVestHeroLarge,
       },
-      gallery: vanGoghSelfPortraitGallery,
-    },
-  },
-  {
-    name: "The Sleeping Gypsy",
-    year: 1897,
-    description:
-      "The Sleeping Gypsy (French: La Bohémienne endormie) is an 1897 oil painting by French Naïve artist Henri Rousseau (1844–1910). It is a fantastical depiction of a lion musing over a sleeping woman on a moonlit night. Rousseau first exhibited the painting at the 13th Salon des Indépendants, and tried unsuccessfully to sell it to the mayor of his hometown, Laval. Instead, it entered the private collection of a Parisian charcoal merchant where it remained until 1924, when it was discovered by the art critic Louis Vauxcelles.",
-    source: "https://en.wikipedia.org/wiki/The_Sleeping_Gypsy",
-    artist: {
-      image: sleepingGypsyArtist,
-      name: "Henri Rousseau",
-    },
-    images: {
-      thumbnail: sleepingGypsyThumbnail,
-      hero: {
-        small: sleepingGypsyHeroSmall,
-        large: sleepingGypsyHeroLarge,
-      },
-      gallery: sleepingGypsyGallery,
-    },
-  },
-  {
-    name: "Lady with an Ermine",
-    year: 1489,
-    description:
-      "The Lady with an Ermine (Italian: Dama con l'ermellino [ˈdaːma kon lermelˈliːno]; Polish: Dama z gronostajem) is a portrait painting widely attributed to the Italian Renaissance artist Leonardo da Vinci. Dated to c. 1489–1491, the work is painted in oils on a panel of walnut wood. Its subject is Cecilia Gallerani, a mistress of Ludovico Sforza (\"Il Moro\"), Duke of Milan; Leonardo was painter to the Sforza court at the time of its execution. It is one of only four surviving portraits of women painted by Leonardo, the others being Ginevra de' Benci, La Belle Ferronnière and the Mona Lisa",
-    source: "https://en.wikipedia.org/wiki/Lady_with_an_Ermine",
-    artist: {
-      image: ladyWithErmineArtist,
-      name: "Leonardo da Vinci",
-    },
-    images: {
-      thumbnail: ladyWithErmineThumbnail,
-      hero: {
-        small: ladyWithErmineHeroSmall,
-        large: ladyWithErmineHeroLarge,
-      },
-      gallery: ladyWithErmineGallery,
+      gallery: boyInRedVestGallery,
     },
   },
   {
@@ -281,6 +262,25 @@ const Data = [
     },
   },
   {
+    name: "Guernica",
+    year: 1937,
+    description:
+      "The scene occurs within a room where, on the left, a wide-eyed bull stands over a grieving woman holding a dead child in her arms. In the center of the room a horse falls in agony with a large gaping hole in its side, as if it had just been run through by a spear or javelin. The horse appears to be wearing chain mail armor, decorated with vertical tally marks arranged in rows. A dead and dismembered soldier lies under the horse. The hand of his severed right arm grasps a shattered sword, from which a flower grows.",
+    source: "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+    artist: {
+      image: guernicaArtist,
+      name: "Pablo Picasso",
+    },
+    images: {
+      thumbnail: guernicaThumbnail,
+      hero: {
+        small: guernicaHeroSmall,
+        large: guernicaHeroLarge,
+      },
+      gallery: guernicaGallery,
+    },
+  },
+  {
     name: "The Basket of Apples",
     year: 1893,
     description:
@@ -300,22 +300,22 @@ const Data = [
     },
   },
   {
-    name: "The Boy in the Red Vest",
-    year: 1889,
+    name: "The Sleeping Gypsy",
+    year: 1897,
     description:
-      "Cézanne painted four oil portraits of this Italian boy in the red vest, all in different poses, which allowed him to study the relationship between the figure and space. The most famous of the four, and the one commonly referred to by this title, is the one which depicts the boy in a melancholic seated pose with his elbow on a table and his head cradled in his hand. It is currently held in Zürich, Switzerland. The other three portraits, of different poses, are in museums in the US",
-    source: "https://en.wikipedia.org/wiki/The_Boy_in_the_Red_Vest",
+      "The Sleeping Gypsy (French: La Bohémienne endormie) is an 1897 oil painting by French Naïve artist Henri Rousseau (1844–1910). It is a fantastical depiction of a lion musing over a sleeping woman on a moonlit night. Rousseau first exhibited the painting at the 13th Salon des Indépendants, and tried unsuccessfully to sell it to the mayor of his hometown, Laval. Instead, it entered the private collection of a Parisian charcoal merchant where it remained until 1924, when it was discovered by the art critic Louis Vauxcelles.",
+    source: "https://en.wikipedia.org/wiki/The_Sleeping_Gypsy",
     artist: {
-      image: boyInRedVestArtist,
-      name: "Paul Cézanne",
+      image: sleepingGypsyArtist,
+      name: "Henri Rousseau",
     },
     images: {
-      thumbnail: boyInRedVestThumbnail,
+      thumbnail: sleepingGypsyThumbnail,
       hero: {
-        small: boyInRedVestHeroSmall,
-        large: boyInRedVestHeroLarge,
+        small: sleepingGypsyHeroSmall,
+        large: sleepingGypsyHeroLarge,
       },
-      gallery: boyInRedVestGallery,
+      gallery: sleepingGypsyGallery,
     },
   },
   {
@@ -338,22 +338,22 @@ const Data = [
     },
   },
   {
-    name: "Mona Lisa",
-    year: 1503,
+    name: "Lady with an Ermine",
+    year: 1489,
     description:
-      "The Mona Lisa (/ˌmoʊnə ˈliːsə/; italian: La Gioconda [la dʒoˈkonda] or Monna Lisa [ˈmɔnna ˈliːza]) is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\". The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
-    source: "https://en.wikipedia.org/wiki/Mona_Lisa",
+      "The Lady with an Ermine (Italian: Dama con l'ermellino [ˈdaːma kon lermelˈliːno]; Polish: Dama z gronostajem) is a portrait painting widely attributed to the Italian Renaissance artist Leonardo da Vinci. Dated to c. 1489–1491, the work is painted in oils on a panel of walnut wood. Its subject is Cecilia Gallerani, a mistress of Ludovico Sforza (\"Il Moro\"), Duke of Milan; Leonardo was painter to the Sforza court at the time of its execution. It is one of only four surviving portraits of women painted by Leonardo, the others being Ginevra de' Benci, La Belle Ferronnière and the Mona Lisa",
+    source: "https://en.wikipedia.org/wiki/Lady_with_an_Ermine",
     artist: {
-      image: monaLisaArtist,
+      image: ladyWithErmineArtist,
       name: "Leonardo da Vinci",
     },
     images: {
-      thumbnail: monaLisaThumbnail,
+      thumbnail: ladyWithErmineThumbnail,
       hero: {
-        small: monaLisaHeroSmall,
-        large: monaLisaHeroLarge,
+        small: ladyWithErmineHeroSmall,
+        large: ladyWithErmineHeroLarge,
       },
-      gallery: monaLisaGallery,
+      gallery: ladyWithErmineGallery,
     },
   },
   {

@@ -11,13 +11,7 @@ function Header(props: {
     <>
       <Container>
         <Link to="/">
-          <LogoImg
-            onClick={() => {
-              props.setSlideshowText(false);
-            }}
-            src={Logo}
-            alt="logo"
-          />
+          <LogoImg onClick={props.handleClick} src={Logo} alt="logo" />
         </Link>
         <StyledLink
           to={props.slideshowText ? "/" : "/Art/starry night"}
@@ -58,9 +52,10 @@ const Container = styled.div`
 const LogoImg = styled.img`
   width: 140px;
   margin-right: 10px;
+  cursor: pointer;
 `;
 
-const Title = styled.h1`
+const Title = styled.button`
   font-weight: 700;
   font-size: 9px;
   line-height: 11.16px;
@@ -68,6 +63,13 @@ const Title = styled.h1`
   color: #7d7d7d;
   margin: 0px;
   cursor: pointer;
+  border: none;
+  background-color: unset;
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 14.88px;
+    letter-spacing: 2.57px;
+  }
 `;
 
 const Line = styled.span`
@@ -75,4 +77,10 @@ const Line = styled.span`
   height: 1px;
   background-color: #e5e5e5;
   display: flex;
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+  }
+  @media (min-width: 1440px) {
+    margin-bottom: 45px;
+  }
 `;
