@@ -11,7 +11,13 @@ function Header(props: {
     <>
       <Container>
         <Link to="/">
-          <LogoImg onClick={props.handleClick} src={Logo} alt="logo" />
+          <LogoImg
+            onClick={() => {
+              props.setSlideshowText(false);
+            }}
+            src={Logo}
+            alt="logo"
+          />
         </Link>
         <StyledLink
           to={props.slideshowText ? "/" : "/Art/starry night"}
