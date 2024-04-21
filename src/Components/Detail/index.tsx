@@ -146,7 +146,10 @@ function Detail1() {
 export default Detail1;
 
 const Container = styled.div`
-  overflow-y: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const InnerContainer = styled.div`
@@ -361,8 +364,6 @@ const Source = styled.h1`
 const SlideshowArrows = styled.div`
   @media (min-width: 1440px) {
     width: 100%;
-    position: absolute;
-    bottom: 0px;
   }
 `;
 

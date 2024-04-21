@@ -8,7 +8,7 @@ function App() {
     const storedState = localStorage.getItem("slideshowText");
     return storedState ? JSON.parse(storedState) : false;
   });
-  console.log(slideshowText);
+
   useEffect(() => {
     localStorage.setItem("slideshowText", JSON.stringify(slideshowText));
   }, [slideshowText]);
